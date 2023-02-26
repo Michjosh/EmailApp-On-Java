@@ -16,8 +16,6 @@ public class Email {
 
     private String inbox;
 
-    private String draft;
-
     public int getId() {
         return id;
     }
@@ -110,15 +108,6 @@ public class Email {
 
     public void setInbox(String inbox) {
         this.inbox = inbox;
-    }
-
-
-    public String getDraft() {
-        return draft;
-    }
-
-    public void setDraft(String draft) {
-        this.draft = draft;
     }
 
     public int getUserId() {

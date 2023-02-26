@@ -4,6 +4,7 @@ import java.util.List;
 
 public class User {
     private int id;
+    private int emailId;
     private String name;
     private String email;
 
@@ -48,6 +49,16 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+    
+    
+    
+    public String geEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(int emailId) {
+        this.emailId = emailId;
     }
 
     @Override

@@ -47,6 +47,16 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+    
+    
+    
+    public String geEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(int emailId) {
+        this.emailId = emailId;
+    }
 
     public int getEmailId() {
         return emailId;

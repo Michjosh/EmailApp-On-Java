@@ -1,2 +1,2 @@
 # EmailApp-On-Java
-My second project using MVC layered architecture. 
+My second project using layered architecture. 

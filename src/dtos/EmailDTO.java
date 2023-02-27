@@ -11,7 +11,6 @@ public class EmailDTO {
     private String senderName;
     private String recipientEmail;
     private String recipientName;
-
     private String inbox;
 
     private Date sentAt;
@@ -90,13 +89,12 @@ public class EmailDTO {
 
     @Override
     public String toString() {
-        return "EmailDTO{" +
-                "id=" + id +
-                ", subject='" + subject + '\'' +
-                ", body='" + body + '\'' +
-                ", senderEmail='" + senderEmail + '\'' +
-                ", recipientEmail=" + recipientEmail +
-                ", sentAt=" + sentAt +
-                '}';
+        return String.format("""
+        ========================
+        Subject: %s
+        Body: %s
+        Recipient Name:%s
+        Recipient Email:%s
+        ========================""", getSubject(), getBody(), getRecipientName(), getRecipientEmail());
     }
 }

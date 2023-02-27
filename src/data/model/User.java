@@ -1,12 +1,10 @@
 package data.model;
 
-import java.util.List;
-
 public class User {
     private int id;
+    private int emailId;
     private String name;
     private String email;
-
     private String userName;
     private String password;
 
@@ -50,14 +48,23 @@ public class User {
         this.userName = userName;
     }
 
+    public int getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(int emailId) {
+        this.emailId = emailId;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return String.format("""
+        ========================
+        User ID: %s
+        Name: %s
+        Email: %s
+        UserName :%s
+        Password :%s
+        ========================""", getId(), getName(), getEmail(), getUserName());
     }
 }

@@ -56,12 +56,13 @@ public class UserDTO extends User {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", userName='" + userName + '\'' +
-                '}';
+        return String.format("""
+        ========================
+        User ID: %s
+        Name: %s
+        Email: %s
+        UserName :%s
+        Password :%s
+        ========================""", getId(), getName(), getEmail(), getUserName(), getPassword());
     }
 }

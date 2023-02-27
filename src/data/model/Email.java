@@ -1,7 +1,6 @@
 package data.model;
 
 import java.util.Date;
-import java.util.List;
 
 public class Email {
     private int id;
@@ -13,10 +12,8 @@ public class Email {
     private String recipientEmail;
     private String recipientName;
     private Date sentAt;
-
     private String inbox;
 
-    private String draft;
 
     public int getId() {
         return id;
@@ -91,17 +88,16 @@ public class Email {
 
     @Override
     public String toString() {
-        return "Email{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", subject='" + subject + '\'' +
-                ", body='" + body + '\'' +
-                ", senderEmail='" + senderEmail + '\'' +
-                ", senderName='" + senderName + '\'' +
-                ", recipientEmail='" + recipientEmail + '\'' +
-                ", recipientName='" + recipientName + '\'' +
-                ", sentAt=" + sentAt +
-                '}';
+        return String.format("""
+        ========================
+        Subject: %s
+        Body: %s
+        Recipient Name:%s
+        Recipient Email:%s
+        Sender name: %s
+        Sender Email: %s
+        ========================""", getSubject(), getBody(), getRecipientName(), getRecipientEmail(),
+                getSenderName(), getSenderEmail());
     }
 
     public String getInbox() {
@@ -110,15 +106,6 @@ public class Email {
 
     public void setInbox(String inbox) {
         this.inbox = inbox;
-    }
-
-
-    public String getDraft() {
-        return draft;
-    }
-
-    public void setDraft(String draft) {
-        this.draft = draft;
     }
 
     public int getUserId() {

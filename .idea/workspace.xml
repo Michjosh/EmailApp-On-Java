@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40e84a8d-3965-422c-92b1-547639aa3eb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Email App.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repo/EmailRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repo/EmailRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repo/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repo/UserRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dtos/EmailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dtos/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/EmailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/EmailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/repo/EmailRepoImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/repo/UserRepoImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/services/EmailServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/services/UserServiceImplTest.java" afterDir="false" />
+    <list default="true" id="40e84a8d-3965-422c-92b1-547639aa3eb6" name="Changes" comment="Fist commit for the email app on Java.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/EmailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/EmailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/UserDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "true",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/DELL/IdeaProjects/Email App",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/IdeaProjects/Email App&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="data.model" />
@@ -95,7 +73,14 @@
       <recent name="data.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceImplTest">
+  <component name="RunManager" selected="JUnit.EmailServiceImplTest">
+    <configuration name="MainOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainOne" />
+      <module name="Email App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmailRepoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Email App" />
       <extension name="coverage">
@@ -107,22 +92,6 @@
       <option name="PACKAGE_NAME" value="data.repo" />
       <option name="MAIN_CLASS_NAME" value="data.repo.EmailRepoImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailRepoImplTest.deleteSentEmailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Email App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="data.repo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="data.repo" />
-      <option name="MAIN_CLASS_NAME" value="data.repo.EmailRepoImplTest" />
-      <option name="METHOD_NAME" value="deleteSentEmailTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceImplTest" />
         <item itemvalue="JUnit.EmailServiceImplTest" />
+        <item itemvalue="JUnit.UserServiceImplTest" />
         <item itemvalue="JUnit.UserRepoImplTest" />
         <item itemvalue="JUnit.EmailRepoImplTest" />
-        <item itemvalue="JUnit.EmailRepoImplTest.deleteSentEmailTest" />
+        <item itemvalue="Application.MainOne" />
       </list>
     </recent_temporary>
   </component>
@@ -201,8 +170,17 @@
       <workItem from="1677329550430" duration="6375000" />
       <workItem from="1677336052455" duration="9701000" />
       <workItem from="1677346459882" duration="34237000" />
-      <workItem from="1677412309433" duration="314000" />
+      <workItem from="1677412309433" duration="6130000" />
+      <workItem from="1677482897324" duration="8995000" />
     </task>
+    <task id="LOCAL-00001" summary="Fist commit for the email app on Java.">
+      <created>1677412725708</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677412725708</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +196,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fist commit for the email app on Java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fist commit for the email app on Java." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Email_App$MainOne.ic" NAME="MainOne Coverage Results" MODIFIED="1677377245855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

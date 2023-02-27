@@ -1,5 +1,8 @@
 import controller.EmailController;
 import controller.UserController;
+import data.model.User;
+import data.repo.UserRepo;
+import data.repo.UserRepoImpl;
 import dtos.EmailDTO;
 import dtos.UserDTO;
 
@@ -44,6 +47,8 @@ public class MainOne {
     }
 
     private static void loginUser() {
+        
+
         try {
             userController.login(input("Enter Your Username"));
             emailApp();
@@ -61,7 +66,7 @@ public class MainOne {
                 2 -> Sent email box
                 3 -> Inbox
                 4 -> Account Settings
-                5 -> Exit App
+                5 -> Logout
                 """;
             String input = input(message);
             switch (input.charAt(0)) {
@@ -69,7 +74,7 @@ public class MainOne {
                 case '2' -> sentBox();
                 case '3' -> inbox();
                 case '4' -> accountSettings();
-                case '5' -> exitApp();
+                case '5' -> startApp();
                 default -> {
                     displayMessage("Enter the right key");
                     emailApp();
@@ -116,6 +121,7 @@ public class MainOne {
 
 
     private static void inbox() {
+
         try {
             String message = """
                 Sent Email Box Menu
@@ -179,12 +185,11 @@ public class MainOne {
     private static void sendEmail(){
         try {
             EmailDTO emailDTO = new EmailDTO();
+            UserDTO userDTO = new UserDTO();
             emailDTO.setRecipientEmail(input("Enter recipient email: "));
             emailDTO.setRecipientName(input("Enter recipient name: "));
             emailDTO.setSubject(input("Email Subject"));
             emailDTO.setBody(input("Email Body: "));
-            emailDTO.setSenderName(input("Sender's Name"));
-            emailDTO.setSenderEmail(input("Sender's Email"));
             emailController.sendEmail(emailDTO);
             displayMessage("Email Sent");
             emailApp();

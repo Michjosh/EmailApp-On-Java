@@ -1,8 +1,5 @@
 import controller.EmailController;
 import controller.UserController;
-import data.model.User;
-import data.repo.UserRepo;
-import data.repo.UserRepoImpl;
 import dtos.EmailDTO;
 import dtos.UserDTO;
 
@@ -181,11 +178,9 @@ public class MainOne {
         }
     }
 
-
     private static void sendEmail(){
         try {
             EmailDTO emailDTO = new EmailDTO();
-            UserDTO userDTO = new UserDTO();
             emailDTO.setRecipientEmail(input("Enter recipient email: "));
             emailDTO.setRecipientName(input("Enter recipient name: "));
             emailDTO.setSubject(input("Email Subject"));

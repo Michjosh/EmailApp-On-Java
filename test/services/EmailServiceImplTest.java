@@ -1,11 +1,11 @@
 package services;
 
-import data.model.Email;
-import dtos.EmailDTO;
+import com.email.project.data.model.Email;
+import com.email.project.dtos.requests.SendEmailRequest;
+import com.email.project.services.EmailService;
+import com.email.project.services.EmailServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,54 +13,51 @@ class EmailServiceImplTest {
 
     EmailService emailService;
 
-    EmailDTO emailDTO;
+    SendEmailRequest sendEmailRequest;
 
     @BeforeEach
     void setUp() {
         emailService = new EmailServiceImpl();
-        emailDTO = new EmailDTO();
-        emailDTO.setRecipientEmail("jean@gmailcom");
-        emailDTO.setRecipientName("Jean");
-        emailDTO.setSubject("The Election Day");
-        emailDTO.setBody("""
+        sendEmailRequest = new SendEmailRequest();
+        sendEmailRequest.setRecipientEmail("jean@gmailcom");
+        sendEmailRequest.setRecipientName("Jean");
+        sendEmailRequest.setSubject("The Election Day");
+        sendEmailRequest.setBody("""
                 Hello there,
                 Its All about the election day,
                 My prayer is that the Obidient would win
                 """);
-        emailDTO.setSenderEmail("michael@gmail.com");
-        emailDTO.setSenderName("Michael");
     }
 
     @Test
     void sendEmailTest() {
-        Email email = emailService.sendEmail(emailDTO);
+        Email email = emailService.sendEmail(sendEmailRequest);
         assertEquals(1, emailService.countSentEmails());
     }
 
     @Test
     void countSentEmailsTest() {
-        emailService.sendEmail(emailDTO);
+        emailService.sendEmail(sendEmailRequest);
         assertEquals(1, emailService.countSentEmails());
     }
 
     @Test
     void getSentEmailsByName() {
-        emailService.sendEmail(emailDTO);
-        emailService.getSentEmailByName("Jean");
+        emailService.sendEmail(sendEmailRequest);
         assertEquals(1, emailService.countSentEmails());
 
     }
 
     @Test
     void deleteSentEmail() {
-        emailService.sendEmail(emailDTO);
+        emailService.sendEmail(sendEmailRequest);
         emailService.deleteSentEmail("Jean");
         assertEquals(0, emailService.countSentEmails());
     }
 
     @Test
     void deleteAllSentEmail() {
-        emailService.sendEmail(emailDTO);
+        emailService.sendEmail(sendEmailRequest);
         emailService.deleteAllSentEmail();
         assertEquals(0, emailService.countSentEmails());
     }

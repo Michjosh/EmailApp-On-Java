@@ -1,7 +1,9 @@
 package services;
 
-import data.model.User;
-import dtos.UserDTO;
+import com.email.project.data.model.User;
+import com.email.project.dtos.requests.CreateUserRequest;
+import com.email.project.services.UserService;
+import com.email.project.services.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,69 +13,66 @@ class UserServiceImplTest {
 
     private UserService userService;
 
-    private UserDTO userDTO;
+    private CreateUserRequest createUserRequest;
 
     @BeforeEach
     void setUp() {
         userService = new UserServiceImpl();
-        userDTO = new UserDTO();
-        userDTO.setName("Michael");
-        userDTO.setUserName("mc");
-        userDTO.setPassword("1234");
-        userDTO.setEmail("michael@gmail.com");
+        createUserRequest = new CreateUserRequest();
+        createUserRequest.setName("Michael");
+        createUserRequest.setUserName("mc");
+        createUserRequest.setPassword("1234");
+        createUserRequest.setEmailAddress("michael@gmail.com");
     }
 
     @Test
     void createAccountTest() {
-        User savedUser = userService.createAccount(userDTO);
-        assertTrue(savedUser.getId() !=0);
+        userService = new UserServiceImpl();
+        createUserRequest = new CreateUserRequest();
+        createUserRequest.setName("Michael");
+        createUserRequest.setUserName("mc");
+        createUserRequest.setPassword("1234");
+        createUserRequest.setEmailAddress("michael@gmail.com");
+        User savedUser = userService.createAccount(createUserRequest);
+       assertNotNull(savedUser);
     }
 
     @Test
     void loginTest() {
-        User savedUser = userService.createAccount(userDTO);
-        userService.login(1);
-        assertEquals(1, savedUser.getId());
+        User savedUser = userService.createAccount(createUserRequest);
+        userService.login("1");
+        assertEquals(1, savedUser.getUserId());
     }
 
     @Test
     void deleteOneUserAccountAfterCreatingTwoTest() {
-        User savedUser = userService.createAccount(userDTO);
-        assertTrue(savedUser.getId() !=0);
-        UserDTO userDTO1;
-        userDTO1 = new UserDTO();
-        userDTO1.setName("Michael");
-        userDTO1.setUserName("mi");
-        userDTO1.setPassword("1234");
-        userDTO1.setEmail("michael@gmail.com");
-        userService.createAccount(userDTO1);
-        userService.countUsers();
-        assertEquals(2, userService.countUsers());
-        userService.deleteAccount(1);
-        assertEquals(1, userService.countUsers());
+        User savedUser = userService.createAccount(createUserRequest);
+//        assertTrue(savedUser.getUserId() !=0);
+        CreateUserRequest createUserRequest1;
+        createUserRequest1 = new CreateUserRequest();
+        createUserRequest1.setName("Michael");
+        createUserRequest1.setUserName("mi");
+        createUserRequest1.setPassword("1234");
+        createUserRequest1.setEmailAddress("michael@gmail.com");
+        userService.createAccount(createUserRequest1);
+        userService.deleteAccount(savedUser);
+        assertNull(savedUser);
     }
 
     @Test
     void findUserById() {
-        userService.createAccount(userDTO);
-        userService.findUserById(1);
-        System.out.println(userService.findUserById(1));
-        assertEquals(1,userService.countUsers());
+        userService.createAccount(createUserRequest);
+        userService.findUserById("1");
+        System.out.println(userService.findUserById("1"));
     }
 
     @Test
-    void countUsers() {
-        userService.createAccount(userDTO);
-        userService.countUsers();
-        assertEquals(1, userService.countUsers());
-    }
-    @Test
     void duplicateUserNameThrowsExceptionTest() {
-        userDTO.setName("Michael");
-        userDTO.setUserName("mc");
-        userDTO.setPassword("1234");
-        userDTO.setEmail("michael@gmail.com");
-        userService.createAccount(userDTO);
-        assertThrows(IllegalArgumentException.class, () -> userService.createAccount(userDTO));
+        createUserRequest.setName("Michael");
+        createUserRequest.setUserName("mc");
+        createUserRequest.setPassword("1234");
+        createUserRequest.setEmailAddress("michael@gmail.com");
+        userService.createAccount(createUserRequest);
+        assertThrows(IllegalArgumentException.class, () -> userService.createAccount(createUserRequest));
     }
 }

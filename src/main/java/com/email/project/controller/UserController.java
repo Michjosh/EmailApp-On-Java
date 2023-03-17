@@ -20,7 +20,7 @@ public class UserController {
         try {
             return new ResponseEntity<>(userService.createAccount(createUserRequest), HttpStatus.CREATED);
         } catch (IllegalArgumentException ex) {
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.SERVICE_UNAVAILABLE);
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -33,7 +33,7 @@ public class UserController {
     public void login(String username) {
         boolean loginSuccessful = false;
         try {
-            userService.findByUserName(username);
+            userService.login(username);
             loginSuccessful = true;
         } catch (NoSuchElementException e) {
             System.err.println("No user found with username: " + username);
@@ -44,7 +44,6 @@ public class UserController {
         if (!loginSuccessful) {
             throw new RuntimeException("Login failed");
         }
-
     }
 
     public void deleteAccount(User user){

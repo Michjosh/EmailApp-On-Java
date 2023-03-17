@@ -3,13 +3,12 @@ import com.email.project.data.model.Email;
 import com.email.project.dtos.requests.SendEmailRequest;
 import com.email.project.dtos.responses.FindEmailResponse;
 
-import java.util.Optional;
-
 public interface EmailService {
     Email sendEmail(SendEmailRequest email);
     long countSentEmails();
     FindEmailResponse getSentEmailsById(String id);
-    void readInbox();
+    FindEmailResponse readInbox(String id);
+    FindEmailResponse readTrashBox(String id);
     void deleteSentEmail(String name);
     void deleteAllSentEmail();
 }

@@ -16,4 +16,5 @@ public class Email {
     private String recipientName;
     private LocalDateTime sentAt = LocalDateTime.now();
     private String userId;
+    private String recipientId;
 }

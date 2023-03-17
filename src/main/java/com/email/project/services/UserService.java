@@ -6,9 +6,11 @@ import com.email.project.dtos.responses.FindUserResponse;
 
 public interface UserService {
     User createAccount(CreateUserRequest createUserRequest);
-    void login(String id);
+    void login(String username);
     void deleteAccount(User user);
     FindUserResponse findUserById(String id);
+    FindUserResponse findUserByEmailAddress(String email);
+    FindUserResponse findUserByName(String name);
     void findByUserName(String username);
 }
 

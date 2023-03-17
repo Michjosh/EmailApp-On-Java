@@ -7,6 +7,5 @@ public class FindUserResponse {
     private String email;
     private String password;
     private String userName;
-
 }
 

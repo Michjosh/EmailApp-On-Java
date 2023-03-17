@@ -32,15 +32,17 @@ public class Mapper {
         email.setRecipientName(sendEmailRequest.getRecipientName());
         email.setRecipientEmail(sendEmailRequest.getRecipientEmail());
         email.setUserId(sendEmailRequest.getUserId());
+        email.setRecipientId(sendEmailRequest.getRecipientId());
     }
 
     public static void toDTO(Email email, FindEmailResponse response){
         response.setRecipientName(email.getRecipientName());
         response.setSubject(email.getSubject());
         response.setBody(email.getBody());
-        response.setEmailId(email.getEmailId());
+        response.setUserId(email.getUserId());
         response.setRecipientEmail(email.getRecipientEmail());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E, dd/MM/yyyy, hh:mm a");
         response.setSentAt(formatter.format(email.getSentAt()));
+        response.setRecipientId(email.getRecipientId());
     }
 }

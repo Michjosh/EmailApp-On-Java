@@ -8,4 +8,5 @@ public class SendEmailRequest {
     private String recipientName;
     private String recipientEmail;
     private String userId;
+    private String recipientId;
 }

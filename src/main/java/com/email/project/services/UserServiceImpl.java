@@ -18,15 +18,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createAccount(CreateUserRequest createUserRequest) {
-        if (userExist(createUserRequest.getName())) {throw new IllegalArgumentException(createUserRequest.getUserName() + " already exists");}
+        if (userExist(createUserRequest.getUserName())) {throw new IllegalArgumentException(createUserRequest.getUserName() + " already exists");}
         isValidEmail(createUserRequest);
         isValidPassword(createUserRequest);
         isValidUsername(createUserRequest);
         isValidName(createUserRequest);
         return userRepo.save(Mapper.toModel(createUserRequest));
     }
-    private boolean userExist(String name) {
-        Optional<User> foundUser = userRepo.findById(name);
+    private boolean userExist(String username) {
+        Optional<User> foundUser = Optional.ofNullable(userRepo.findByUserName(username));
         return foundUser.isPresent();
     }
     @Override
@@ -49,7 +49,6 @@ public class UserServiceImpl implements UserService {
         Mapper.toDTO(foundUser.get(), response);
         return response;
     }
-
     @Override
     public FindUserResponse findUserByEmailAddress(String email) {
         Optional<User> foundUser = Optional.ofNullable(userRepo.findUserByEmailAddress(email));
@@ -58,7 +57,6 @@ public class UserServiceImpl implements UserService {
         Mapper.toDTO(foundUser.get(), response);
         return response;
     }
-
     @Override
     public FindUserResponse findUserByName(String name) {
         Optional<User> foundUser = Optional.ofNullable(userRepo.findUserByName(name));
@@ -69,11 +67,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void findByUserName(String username) {
-        Optional <User> foundUser = Optional.ofNullable(userRepo.findByUserName(username));
-        if (foundUser.isEmpty() ) throw new NullPointerException("User does not exist");
+    public FindUserResponse findByUsername(String username) {
+        Optional<User> foundUser = Optional.ofNullable(userRepo.findByUserName(username));
+        if (foundUser.isEmpty()) throw new NullPointerException("User does not exist");
         FindUserResponse response = new FindUserResponse();
         Mapper.toDTO(foundUser.get(), response);
+        return response;
     }
 
     public static void isValidEmail(CreateUserRequest createUserRequest) {
@@ -101,9 +100,8 @@ public class UserServiceImpl implements UserService {
         if (!createUserRequest.getUserName().matches(regex)) {
             if (!createUserRequest.getPassword().matches(regex)) {
                 throw new IllegalArgumentException("Invalid username: " + createUserRequest.getUserName() + """
-                        Username must usernames consisting of
-                        letters, numbers,
-                        and underscores with a length between 3 and 16 characters
+                         must consisting of:
+                        letters, numbers, and underscores with a length between 3 and 16 characters
                         """);
             }
         }
@@ -113,7 +111,7 @@ public class UserServiceImpl implements UserService {
         String regex = "^(?i)[a-z]+( [a-z]+)+$";
         if (!createUserRequest.getName().matches(regex)){
             throw new IllegalArgumentException("Invalid name: " + createUserRequest.getUserName() + """
-                    Name must contain only letters for firstname and lastname separated by a space
+                     must contain only letters for firstname and lastname separated by a space
                     """);
         }
     }

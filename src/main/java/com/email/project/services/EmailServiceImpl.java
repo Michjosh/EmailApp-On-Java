@@ -24,17 +24,13 @@ public class EmailServiceImpl implements EmailService{
 
     @Override
     public Email sendEmail(SendEmailRequest sendEmailRequest) {
-        if (checkUserExist(sendEmailRequest))throw new NullPointerException("No User found with ID : " + sendEmailRequest.getUserId());
+        if (validateSenderEmail(sendEmailRequest)) throw new NullPointerException("No User found with email : " + sendEmailRequest.getSenderEmail());
         if (validateRecipientEmail(sendEmailRequest)) throw new NullPointerException("No User found with email : " + sendEmailRequest.getRecipientEmail());
         if (validateRecipientName(sendEmailRequest)) throw new NullPointerException("No User found with name : " + sendEmailRequest.getRecipientName());
         Email email = new Email();
         Mapper.toModel(sendEmailRequest, email);
         inboxRepo.save(email);
         return sentBoxRepo.save(email);
-    }
-    private boolean checkUserExist(SendEmailRequest request) {
-        userService.findUserById(request.getUserId());
-        return false;
     }
     @Override
     public long countSentEmails() {
@@ -75,6 +71,11 @@ public class EmailServiceImpl implements EmailService{
         if (sentBoxRepo.count() == 0) throw new NoSuchElementException("Nothing to delete");
         sentBoxRepo.deleteAll();
     }
+    private boolean validateSenderEmail(SendEmailRequest sendEmailRequest){
+        userService.findUserByEmailAddress(sendEmailRequest.getRecipientEmail());
+        return false;
+    }
+
     private boolean validateRecipientEmail(SendEmailRequest sendEmailRequest){
         userService.findUserByEmailAddress(sendEmailRequest.getRecipientEmail());
         return false;

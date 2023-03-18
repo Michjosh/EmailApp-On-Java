@@ -7,6 +7,6 @@ public class SendEmailRequest {
     private String body;
     private String recipientName;
     private String recipientEmail;
-    private String userId;
-    private String recipientId;
+    private String senderEmail;
+
 }

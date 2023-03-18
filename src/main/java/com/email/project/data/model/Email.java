@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+
 @Data
 @Document
 public class Email {
@@ -15,6 +15,5 @@ public class Email {
     private String recipientEmail;
     private String recipientName;
     private LocalDateTime sentAt = LocalDateTime.now();
-    private String userId;
-    private String recipientId;
+    private String senderEmail;
 }

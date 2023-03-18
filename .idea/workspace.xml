@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40e84a8d-3965-422c-92b1-547639aa3eb6" name="Changes" comment="Second commit with persistence and other plugins">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/SentBoxRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/TrashRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/email/project/utils/Asychronous.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/controller/EmailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/data/model/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/model/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/data/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/EmailRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/InboxRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/data/repo/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/requests/SendEmailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/requests/SendEmailRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/responses/FindEmailResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/responses/FindEmailResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/responses/FindUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/dtos/responses/FindUserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/services/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/services/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/services/EmailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/services/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/utils/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/project/utils/StingBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/project/utils/StingBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +185,7 @@
       <workItem from="1678863417168" duration="8086000" />
       <workItem from="1678958398827" duration="892000" />
       <workItem from="1679040211429" duration="2033000" />
-      <workItem from="1679042770424" duration="28080000" />
+      <workItem from="1679042770424" duration="37530000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit for the email app on Java.">
       <created>1677412725708</created>
@@ -225,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678824121123</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Second commit with persistence and other plugins">
+      <created>1679082723649</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679082723649</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

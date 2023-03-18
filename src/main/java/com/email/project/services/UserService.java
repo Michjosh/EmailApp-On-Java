@@ -11,6 +11,6 @@ public interface UserService {
     FindUserResponse findUserById(String id);
     FindUserResponse findUserByEmailAddress(String email);
     FindUserResponse findUserByName(String name);
-    void findByUserName(String username);
+    FindUserResponse findByUsername(String username);
 }
 

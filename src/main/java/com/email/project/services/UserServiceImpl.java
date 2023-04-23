@@ -75,14 +75,14 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
-    public static void isValidEmail(CreateUserRequest createUserRequest) {
+    private static void isValidEmail(CreateUserRequest createUserRequest) {
         String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         if (!createUserRequest.getEmailAddress().matches(emailRegex)) {
             throw new IllegalArgumentException("Invalid email address: " + createUserRequest.getEmailAddress());
         }
     }
 
-    public void isValidPassword(CreateUserRequest createUserRequest) {
+    private void isValidPassword(CreateUserRequest createUserRequest) {
         String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$";
         if (!createUserRequest.getPassword().matches(regex)){
             throw new IllegalArgumentException("Invalid password : " + createUserRequest.getPassword() + """
@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public void isValidUsername(CreateUserRequest createUserRequest) {
+    private void isValidUsername(CreateUserRequest createUserRequest) {
         String regex = "^[a-zA-Z0-9_]{3,16}$";
         if (!createUserRequest.getUserName().matches(regex)) {
             if (!createUserRequest.getPassword().matches(regex)) {
@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public void isValidName(CreateUserRequest createUserRequest) {
+    private void isValidName(CreateUserRequest createUserRequest) {
         String regex = "^(?i)[a-z]+( [a-z]+)+$";
         if (!createUserRequest.getName().matches(regex)){
             throw new IllegalArgumentException("Invalid name: " + createUserRequest.getUserName() + """

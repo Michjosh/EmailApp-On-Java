@@ -28,7 +28,8 @@ public class UserController {
     @GetMapping("/emailApp/findUser/{username}")
     public ResponseEntity<?> findUserByUsername(@PathVariable String username) {
         try {
-            return new ResponseEntity<>(userService.findByUsername(username), HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(userService.findByUsername(username), HttpStatus.ACCEPTED
+            );
         } catch (IllegalArgumentException | NullPointerException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
